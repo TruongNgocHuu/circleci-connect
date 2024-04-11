@@ -7,7 +7,7 @@ jobs:
       - image: cimg/simple_node
     steps:
       - checkout
-      - run: echo "this is the build job"
+      - run: echo "this is the build job here"
   test:
     docker:
       - image: cimg/simple_node
