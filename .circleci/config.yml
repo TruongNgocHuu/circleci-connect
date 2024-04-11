@@ -10,14 +10,16 @@ jobs:
       DOCKER_PASSWORD: $DOCKER_PASSWORD 
     steps:
       - checkout
-      - setup_remote_docker: 24.0.2
+      - setup_remote_docker:
+          version: 24.0.2
 
   test:
     docker:
       - image: cimg/simple_node
     steps:
       - checkout
-      - setup_remote_docker: 24.0.2
+      - setup_remote_docker:
+          version: 24.0.2
 
 # Orchestrate our job run sequence
 workflows:
