@@ -8,9 +8,7 @@ jobs:
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
-      - run:
-          name: Authenticate with Docker Hub
-          command: docker login -u "$DOCKER_USERNAME" -u "$DOCKER_PASSWORD"
+      - run: echo "build"
       - setup_remote_docker
 
   test:
@@ -19,9 +17,7 @@ jobs:
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
-      - run:
-          name: Authenticate with Docker Hub
-          command: docker login -u "$DOCKER_USERNAME" -u "$DOCKER_PASSWORD"
+      - run: echo "test"
       - setup_remote_docker
 
 # Orchestrate our job run sequence
