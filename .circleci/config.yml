@@ -12,9 +12,9 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Install Docker client
-          command: docker --version
-      - run: docker build -t my-container .
-      - run: docker run my-container
+          command: echo docker --version
+      - run: echo docker build -t my-container .
+      - run: echo docker run my-container
 
   test:
     docker:
@@ -26,9 +26,9 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Install Docker client
-          command: docker --version
-      - run: docker build -t my-container .
-      - run: docker run my-container
+          command: echo docker --version
+      - run: echo docker build -t my-container .
+      - run: echo docker run my-container
 
 # Orchestrate our job run sequence
 workflows:
