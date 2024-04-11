@@ -5,18 +5,19 @@ jobs:
   build:
     docker:
       - image: cimg/simple_node
-    evironment:
+    environment:
       DOCKER_USERNAME: $DOCKER_USERNAME
       DOCKER_PASSWORD: $DOCKER_PASSWORD 
     steps:
       - checkout
-      - run: echo "this is the build job here"
+      - setup_remote_docker: 24.0.2
+
   test:
     docker:
       - image: cimg/simple_node
     steps:
       - checkout
-      - run: echo "this is the test job"
+      - setup_remote_docker: 24.0.2
 
 # Orchestrate our job run sequence
 workflows:
