@@ -5,11 +5,11 @@ jobs:
   build:
     docker:
       - image: cimg/simple_node
-    environment:
-      DOCKER_USERNAME: $DOCKER_USERNAME
-      DOCKER_PASSWORD: $DOCKER_PASSWORD 
     steps:
       - checkout
+      - run:
+        name: Authenticate with docker hub
+        command: |echo "$DOCKER_PASSWORD"| docker login -u "$DOCKER_USERNAME" --pasword-stdin
       - setup_remote_docker
 
   test:
@@ -17,6 +17,9 @@ jobs:
       - image: cimg/simple_node
     steps:
       - checkout
+      - run:
+        name: Authenticate with docker hub
+        command: |echo "$DOCKER_PASSWORD"| docker login -u "$DOCKER_USERNAME" --pasword-stdin
       - setup_remote_docker
 
 # Orchestrate our job run sequence
