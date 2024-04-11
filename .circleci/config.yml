@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
+      - setup_remote_docker
       - run: docker build -t my-container .
       - run: docker run my-container
-      - setup_remote_docker
 
   test:
     docker:
@@ -18,9 +18,9 @@ jobs:
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
+      - setup_remote_docker
       - run: docker build -t my-container .
       - run: docker run my-container
-      - setup_remote_docker
 
 # Orchestrate our job run sequence
 workflows:
