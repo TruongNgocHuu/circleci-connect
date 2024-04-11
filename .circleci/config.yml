@@ -10,8 +10,7 @@ jobs:
       # Authenticate with Docker Hub using environment variables
       - run:
           name: Authenticate with Docker Hub
-          command: |
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          command: docker login -u "$DOCKER_USERNAME" -u "$DOCKER_PASSWORD"
       - setup_remote_docker
 
   test:
@@ -22,8 +21,7 @@ jobs:
       # Authenticate with Docker Hub using environment variables
       - run:
           name: Authenticate with Docker Hub
-          command: |
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          command: docker login -u "$DOCKER_USERNAME" -u "$DOCKER_PASSWORD"
       - setup_remote_docker
 
 # Orchestrate our job run sequence
