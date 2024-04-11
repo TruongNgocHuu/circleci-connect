@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/simple_node
+      - image: simple_node
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
@@ -16,7 +16,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/simple_node
+      - image: simple_node
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
