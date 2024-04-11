@@ -10,7 +10,9 @@ jobs:
       # Authenticate with Docker Hub using environment variables
       - run:
           name: Install Docker client
-          command: apk add docker-cli
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker-ce
       - setup_remote_docker
       - run: docker build -t my-container .
       - run: docker run my-container
@@ -23,7 +25,9 @@ jobs:
       # Authenticate with Docker Hub using environment variables
       - run:
           name: Install Docker client
-          command: apk add docker-cli
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker-ce
       - setup_remote_docker
       - run: docker build -t my-container .
       - run: docker run my-container
