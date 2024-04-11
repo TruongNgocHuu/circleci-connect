@@ -5,6 +5,9 @@ jobs:
   build:
     docker:
       - image: cimg/simple_node
+    evironment:
+      DOCKER_USERNAME: $DOCKER_USERNAME
+      DOCKER_PASSWORD: $DOCKER_PASSWORD 
     steps:
       - checkout
       - run: echo "this is the build job here"
