@@ -9,7 +9,8 @@ jobs:
       - checkout
       - run:
         name: Authenticate with docker hub
-        command: |echo "$DOCKER_PASSWORD"| docker login -u "$DOCKER_USERNAME" --pasword-stdin
+        command: |
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
       - setup_remote_docker
 
   test:
@@ -19,7 +20,8 @@ jobs:
       - checkout
       - run:
         name: Authenticate with docker hub
-        command: |echo "$DOCKER_PASSWORD"| docker login -u "$DOCKER_USERNAME" --pasword-stdin
+        command: |
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
       - setup_remote_docker
 
 # Orchestrate our job run sequence
