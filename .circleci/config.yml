@@ -5,6 +5,7 @@ jobs:
   build:
     docker:
       - image: huutocdai/simple_node:latest
+      - image: cimg/base:2023.06
     steps:
       - checkout
       # Authenticate with Docker Hub using environment variables
@@ -12,7 +13,7 @@ jobs:
           version: 20.10.7
       - run:
           name: Install Docker client
-          command: --version
+          command: docker --version
       - run: docker build -t my-container .
       - run: docker run my-container
 
@@ -26,7 +27,7 @@ jobs:
           version: 20.10.7
       - run:
           name: Install Docker client
-          command: --version
+          command: docker --version
       - run: docker build -t my-container .
       - run: docker run my-container
 
