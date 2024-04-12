@@ -14,8 +14,11 @@ jobs:
       - run:
           name: Check docker version
           command: docker --version
+      - run:
+          name : pull docker image from docker hub
+          command: docker pull huutocdai/simple_node:latest    
       # - run: docker build -t my-container .
-      # - run: docker run my-container
+      - run: docker run huutocdai/simple_node
 # Orchestrate our job run sequence
 workflows:
   build:
